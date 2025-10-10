@@ -1,0 +1,1 @@
+wget https://huggingface.co/datasets/zb1213899/VoxelGS_BIN/resolve/main/BIN.zip
