@@ -10,7 +10,7 @@ from datasets import load_dataset
 from gscoder.compressor import gs_encoder, gs_decoder
 from utils.read_log import stat_log
 
-for config_path in glob.glob('config/MipNerf360.yaml'):
+for config_path in glob.glob('config/*.yaml'):
     configer = Config(config_path=config_path)
     cfg_dataset = configer.parse_args()
     cfg_dataset.model.white_background = cfg_dataset.data.white_background
@@ -22,7 +22,7 @@ for config_path in glob.glob('config/MipNerf360.yaml'):
         logger = create_logger(cfg.train)
         if os.path.exists(cfg.train.test_log):
             print(f'skipping {scene}, already done')
-            # continue
+            continue
         # save config
         print('start training...', scene)
         cfg.config = os.path.join(cfg.train.exp_dir, 'config.yaml')
