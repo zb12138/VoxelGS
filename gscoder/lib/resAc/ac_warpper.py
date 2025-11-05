@@ -1,4 +1,5 @@
 '''
+Run Length Coding 
 Author: chunyangf@qq.com
 '''
 from ctypes import *
@@ -45,14 +46,10 @@ def decode_res(code, pointNum, channel):
     lib.decoding(code_p, code.shape[0], pointNum, channel, data)
     return np.array(data[0:pointNum * channel]).reshape(channel, pointNum).T
 
-
-
 def encode_int128(value):
-    # 将一个整数编码为 16 字节（128 位）
     return value.to_bytes(16, byteorder='little')
 
 def decode_int128(encoded_value):
-    # 从 16 字节编码中解码整数
     return int.from_bytes(encoded_value, byteorder='little')
 
 def encode_res_multichannel(data, detail=False):
@@ -63,7 +60,7 @@ def encode_res_multichannel(data, detail=False):
     channel = data.shape[1]
     chan3 = channel // 3
     bits = []
-    bits.append(bytes([channel-chan3 * 3]))  # 1 channel数
+    bits.append(bytes([channel-chan3 * 3]))  # 1 channel num
     for c in range(chan3):
         encoded_chunk = encode_res(data[:, c*3:(c+1)*3])
         bits.append(encode_int128(len(encoded_chunk)))  
