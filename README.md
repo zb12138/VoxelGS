@@ -1,4 +1,4 @@
-## Voxel-GS: Quantized Scaffold Gaussian Splatting Compression with Run-Length Coding
+## Voxel-GS: Quantized Scaffold Gaussian Splatting Compression with Run-Length Coding [DCC26](https://arxiv.org/abs/2512.17528)
 
 ### Dataset
 ```
