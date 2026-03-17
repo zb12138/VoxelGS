@@ -33,7 +33,7 @@ voxelGS/data
 cuda 11.7+python3.8
 ```
 conda install pytorch==1.13.1 torchvision==0.14.1 torchaudio==0.13.1 pytorch-cuda=11.7 -c pytorch -c nvidia
-pip install omegaconf,loguru,open3d==0.19.0,opencv-python,plyfile,tensorboard,termcolor,torch_scatter,jaxtyping,einops,lpips
+pip install omegaconf loguru open3d opencv-python plyfile tensorboard termcolor torch_scatter jaxtyping einops lpips
 pip install models/submodules/* # from Scaffold-GS
 ```
 
@@ -45,12 +45,12 @@ pip install models/submodules/* # from Scaffold-GS
 
 ### Encoding, decoding, evaluation, show from separated GS PLY
 1. Provide -ply -encode for encoding  
-```python Coder.py -ply output/base/Nerf_Synthetic/hotdog/point_cloud/point_cloud_30000.quantized.ply -encode```
+```python Coder.py -ply Results/BIN/Nerf_Synthetic/hotdog/point_cloud/point_cloud_30000.quantized.ply -encode```
 
 2. Provide -bin for decoding  
-```python Coder.py -bin output/base/Nerf_Synthetic/hotdog/gsbin```
+```python Coder.py -bin Results/BIN/Nerf_Synthetic/hotdog/gsbin```
 
 3. Add -show -eval for visualization and evaluation  
-```python Coder.py -bin output/base/Nerf_Synthetic/hotdog/gsbin -show -eval```
+```python Coder.py -bin Results/BIN/Nerf_Synthetic/hotdog/gsbin -show -eval```
 
 
